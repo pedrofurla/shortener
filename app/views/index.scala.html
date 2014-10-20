@@ -1,0 +1,14 @@
+@(message: String)(error:Option[String] = None)
+
+@main("Welcome to Play") {
+
+    @error.map{ x =>
+        <p style="color:red">@x</p>
+    }.getOrElse("")
+
+    Enter the URL to be shortened:
+    <form action="/shortener" method="GET">
+        <input type="text" name="url" value="">
+    </form>
+
+}
