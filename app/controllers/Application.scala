@@ -6,7 +6,7 @@ import java.net.URL
 
 
 /**
-  
+
  */
 object Application extends Controller {
   import scalaz._
@@ -54,7 +54,7 @@ object Shortener {
   val baseUrl = "http://localhost:9000/go/"
   private val lock = new AnyRef
 
-  private var short2Url = Map[Index, URL]()
+  @volatile private var short2Url = Map[Index, URL]()
   private var url2Short = Map[URL, Index]()
   private var index: Index = 0L
 
